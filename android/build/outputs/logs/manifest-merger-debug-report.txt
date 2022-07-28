@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml:1:1-4:12
+INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml:1:1-4:12
+INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml:1:1-4:12
+	package
+		ADDED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml:2:11-32
+		INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+		ADDED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+		ADDED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/agrowave-tech/Documents/Agrowave1/agrowavetraderapp/node_modules/payu-non-seam-less-react/android/src/main/AndroidManifest.xml

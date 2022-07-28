@@ -1,0 +1,38 @@
+{
+  "name": "payu-non-seam-less-react",
+  "title": "PayUCheckoutPro React Native Module",
+  "version": "2.4.0",
+  "description": "React native wrapper built upon PayU's CheckoutPro SDK for Android and iOS",
+  "main": "index.js",
+  "scripts": {
+    "version": "./version-ios.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/payu-intrepos/payu-non-seamless-react.git",
+    "baseUrl": "https://github.com/payu-intrepos/payu-non-seamless-react"
+  },
+  "keywords": [
+    "react-native",
+    "payu-india",
+    "android",
+    "ios",
+    "react"
+  ],
+  "author": {
+    "name": "PayU Mobile",
+    "email": "mobile@payu.in"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-native": ">=0.59.0-rc.0 <1.0.x"
+  },
+  "devDependencies": {
+    "react": "16.9.0",
+    "react-native": "0.61.5"
+  }
+}
