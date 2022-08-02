@@ -77,7 +77,7 @@ repositories {
         // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
         url "$rootDir/../node_modules/react-native/android"
     }
-    maven { url "https://phonepe.bintray.com/PhonePeIntentSDK" }
+    // maven { url "https://phonepe.bintray.com/PhonePeIntentSDK" }
     maven {
         // Android JSC is installed from npm
         url "$rootDir/../node_modules/jsc-android/dist"
