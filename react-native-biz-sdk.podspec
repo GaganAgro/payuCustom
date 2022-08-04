@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
     'PayUResource' => ['ios/PayUBizSdkInfo.plist']
   }
   s.dependency "React"
-  s.dependency 'PayUIndia-CheckoutPro' , '~> 4.4'
+  s.dependency 'PayUIndia-CheckoutPro' , '~> 5.2'
 end
 

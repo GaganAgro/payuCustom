@@ -1,7 +1,7 @@
 {
   "name": "payu-non-seam-less-react",
   "title": "PayUCheckoutPro React Native Module",
-  "version": "2.4.0",
+  "version": "2.5.0",
   "description": "React native wrapper built upon PayU's CheckoutPro SDK for Android and iOS",
   "main": "index.js",
   "scripts": {

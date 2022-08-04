@@ -141,7 +141,7 @@
             checkoutProConfig.enforcePaymentList = enforcePayment;
         }
         [self setCBConfig:configDict checkoutProConfig:checkoutProConfig];
-        checkoutProConfig.offerDetails = [self getOfferDetails:configDict[@"offer_details"]];
+
         
         return checkoutProConfig;
     }
@@ -289,18 +289,7 @@
   return billingCycle;
 }
 
-+(NSArray<PayUOfferDetails *> *)getOfferDetails:(NSArray*)array {
-  NSMutableArray<PayUOfferDetails *> *offerDetails = [NSMutableArray new];
-  
-  for (NSDictionary *dict in array) {
-    PayUOfferDetails *offer = [[PayUOfferDetails alloc] initWithTitle:dict[@"offerTitle"]
-                                                     offerDescription:dict[@"offerDescription"]
-                                                             offerKey:dict[@"offerKey"]
-                                                         paymentTypes:[self getPaymentTypes:dict[@"offerPaymentTypes"]]];
-    [offerDetails addObject:offer];
-  }
-  return offerDetails;
-}
+
 
 +(NSArray<NSNumber *> *)getPaymentTypes:(NSArray*)array {
   NSMutableArray<NSNumber *> *paymentTypes = [NSMutableArray new];

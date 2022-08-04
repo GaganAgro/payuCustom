@@ -19,7 +19,6 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.payu.base.models.ErrorResponse;
 import com.payu.base.models.OrderDetails;
 import com.payu.base.models.PayUBillingCycle;
-import com.payu.base.models.PayUOfferDetails;
 import com.payu.base.models.PayUPaymentParams;
 import com.payu.base.models.PayUSIParams;
 import com.payu.base.models.PaymentMode;
@@ -213,9 +212,6 @@ public class PayUBizSdkModule extends ReactContextBaseJavaModule implements PayU
             }catch (Resources.NotFoundException e){
                 Log.e("PayU",e.getLocalizedMessage());            }
         }
-        if(map.hasKey(PayUBizConstants.OFFER_DETAILS)){
-            config.setOfferDetails(getOfferDetails(Objects.requireNonNull(map.getArray(PayUBizConstants.OFFER_DETAILS))));
-        }
         if ( map.hasKey(PayUBizConstants.ENFORCEDLIST) )
             config.setEnforcePaymentList(getEnforcePaymentList(Objects.requireNonNull(map.getArray(PayUBizConstants.ENFORCEDLIST))));
 
@@ -317,35 +313,6 @@ public class PayUBizSdkModule extends ReactContextBaseJavaModule implements PayU
     }
 
     /**
-     * Convert offerDetailArrayMap to OfferDetails
-     * @param offerDetailArray
-     * @return ArrayList of {@link com.payu.base.models.PayUOfferDetails}
-     */
-    private ArrayList<PayUOfferDetails> getOfferDetails(ReadableArray offerDetailArray) {
-        ArrayList<PayUOfferDetails> resultList = new ArrayList<>(offerDetailArray.size());
-        for(int i=0;i<offerDetailArray.size();i++) {
-            ReadableMap offerMap = offerDetailArray.getMap(i);
-            PayUOfferDetails payUOfferDetails = new PayUOfferDetails();
-            if (null != offerMap) {
-                if (offerMap.hasKey(PayUBizConstants.OFFER_TITLE)) {
-                    payUOfferDetails.setOfferTitle(Objects.requireNonNull(offerMap.getString(PayUBizConstants.OFFER_TITLE)));
-                }
-                if (offerMap.hasKey(PayUBizConstants.OFFER_DESCRIPTION)) {
-                    payUOfferDetails.setOfferDescription(Objects.requireNonNull(offerMap.getString(PayUBizConstants.OFFER_DESCRIPTION)));
-                }
-                if (offerMap.hasKey(PayUBizConstants.OFFER_KEY)) {
-                    payUOfferDetails.setOfferKey(Objects.requireNonNull(offerMap.getString(PayUBizConstants.OFFER_KEY)));
-                }
-                if (offerMap.hasKey(PayUBizConstants.OFFER_PAYMENT_TYPES)) {
-                    payUOfferDetails.setOfferPaymentTypes(getPaymentTypesList(Objects.requireNonNull(offerMap.getArray(PayUBizConstants.OFFER_PAYMENT_TYPES))));
-                }
-                resultList.add(payUOfferDetails);
-            }
-        }
-        return resultList;
-    }
-
-    /**
      * Convert paymentOrderArray to PaymentMode list
      * @param paymentOrderArray paymentOrderArray
      * @return List of PaymentMode
@@ -400,55 +367,7 @@ public class PayUBizSdkModule extends ReactContextBaseJavaModule implements PayU
         }
         return typeValue;
     }
-//    private CustomBrowserConfig getCbConfig(ReadableMap map) {
-//        ReadableMap configMap = map.getMap("cb_config");
-//        CustomBrowserConfig config = new CustomBrowserConfig(map.getString(PayUBizConstants.KEY), map.getString(PayUBizConstants.TXNID));
-//        config.setDisableBackButtonDialog(configMap.getBoolean("disableBackButtonDialog"));
-//        config.setEnableReviewOrder(configMap.getInt("enableReviewOrder"));
-//        if (map.hasKey("review_order_data")) {
-//            config.setReviewOrderDefaultViewData(getReviewOrderBundle(map));
-//        }
-//        Log.v("PayU",config.getReviewOrderDefaultViewData().getReviewOrderDatas().toString());
-//        config.setEnableSurePay(configMap.getInt("enableSurePay"));
-//        config.setAutoApprove(configMap.getBoolean("autoApprove"));
-//        config.setAutoSelectOTP(configMap.getBoolean("autoSelectOTP"));
-//        config.setMerchantSMSPermission(configMap.getBoolean("merchantSMSPermission"));
-//        config.setViewPortWideEnable(configMap.getBoolean("viewPortWideEnable"));
-//        config.setMerchantResponseTimeout(configMap.getInt("merchantResponseTimeout"));
-//        if (map.hasKey("merchantCheckoutActivityPath"))
-//         config.setMerchantCheckoutActivityPath(configMap.getString("merchantCheckoutActivityPath"));
-//        return config;
-////        Log.v("PayU",map.getString("cb_config"));
-//    }
 
-//    /**
-//     * Parse and create ReviewOrder data
-//     *
-//     * @param map To be passed by merchant via JS
-//     * @return ReviewOrderBundle
-//     */
-//    private ReviewOrderBundle getReviewOrderBundle(ReadableMap map) {
-//        ReviewOrderBundle bundle = new ReviewOrderBundle();
-//        ReadableMap reviewOrderMap = map.getMap("review_order_data");
-//        ReadableMapKeySetIterator keyIterator = reviewOrderMap.keySetIterator();
-//        while (keyIterator.hasNextKey()) {
-//            String key = keyIterator.nextKey();
-//            String value = reviewOrderMap.getString(key);
-//            Log.v("PayU ",key+" "+value);
-//            bundle.addOrderDetails(key, value);
-//        }
-//        return bundle;
-//    }
-//
-//    private PayuHashes parseHashes(ReadableMap map) {
-//        PayuHashes payuHashes = new PayuHashes();
-//        payuHashes.setVasForMobileSdkHash(map.getString(PayUBizConstants.VAS_FOR_MOBILE_SDK));
-//        payuHashes.setPaymentHash(map.getString(PayUBizConstants.PAYMENT_SOURCE));
-//        payuHashes.setPaymentRelatedDetailsForMobileSdkHash(map.getString(PayUBizConstants.PAYMENT_RELATED_DETAILS_FOR_MOBILE_SDK));
-//        payuHashes.setDeleteCardHash(map.getString(PayUBizConstants.DELETE_USER_CARD));
-//        payuHashes.setCheckOfferStatusHash(map.getString(PayUBizConstants.CHECK_OFFER_STATUS));
-//        return payuHashes;
-//    }
 
     @Override
     public void generateHash(@NotNull HashMap<String, String> hashMap, @NotNull PayUHashGenerationListener payUHashGenerationListener) {

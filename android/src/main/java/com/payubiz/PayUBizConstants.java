@@ -47,12 +47,7 @@ public interface PayUBizConstants {
     String CARD_DETAILS = "cartDetails";
     String PAYMENT_MODES_ORDER = "paymentModesOrder";
     String MERCHANT_LOGO = "merchantLogo";
-    String OFFER_DETAILS = "offer_details";
     String IS_FREE_TRIAL = "isFreeTrial";
-    String OFFER_TITLE = "offerTitle";
-    String OFFER_DESCRIPTION = "offerDescription";
-    String OFFER_KEY = "offerKey";
-    String OFFER_PAYMENT_TYPES = "offerPaymentTypes";
     String ENFORCEDLIST = "enforcePaymentList";
     String REACT = "react";
     String PAYU_PAYMENT_PARAMS = "payUPaymentParams";
